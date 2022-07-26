@@ -8,7 +8,7 @@ namespace la_mia_pizzeria_static.Controllers.Api
     [ApiController]
     public class PizzaController : ControllerBase
     {
-        [Route("get")]
+        //[Route("get")]
         [HttpGet]
         public IActionResult GetPizze()
         {

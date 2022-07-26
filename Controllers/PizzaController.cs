@@ -17,8 +17,9 @@ namespace la_mia_pizzeria_static.Controllers
 
         public IActionResult Index()
         {
-            PizzeriaContext context = new PizzeriaContext();
-            return View(context.Pizze.Include(p => p.Category).ToList());
+            //PizzeriaContext context = new PizzeriaContext();
+            //return View(context.Pizze.Include(p => p.Category).ToList());
+            return View();
         }
 
         public IActionResult Detail(int id)
