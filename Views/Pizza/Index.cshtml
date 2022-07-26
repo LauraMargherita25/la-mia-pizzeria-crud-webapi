@@ -21,7 +21,7 @@
             }
             else{
 
-                @foreach (Pizza pizza in Model)
+                @*@foreach (Pizza pizza in Model)
                 {
                     <div class="card w-25">
                         <a asp-controller="Pizza", asp-action="Detail", asp-route-id="@pizza.Id">
@@ -43,7 +43,9 @@
                             </form>
                         </div>
                     </div>
-                }
+                }*@
+
+                
             }
             
         </div>
