@@ -7,10 +7,14 @@
 <div class="text-center">
 
     <div class="row">
-        <div class="col">
+        <div class="col-12">
             <h1 class="display-4">Pizzeria Static</h1>
             <p>Scegli la pizza statica che ti piace di più!</p>
         </div>
+        <div class="col-12 mb-5 p-0">
+            <input id="search_input" type="text" class="form-control" placeholder="Cerca qui la tua pizza"/>
+        </div>
+
     </div>
 
     @*<div class="row">
@@ -67,22 +71,20 @@
 </div>
 
 <script type="text/javascript">
-    //axios.get('api/pizza').then(res => {
-    //    console.log('risultato ok', res);
-    //    if (res.data.length == 0) {
-    //        document.querySelector('.js_no_pizza').classList.remove('d-none');
-    //        document.querySelector('js_pizze_table').classList.add('d-none');
-    //    }
-    //    else 
-    //    {
+    
+    document.getElementById('search_input').addEventListener("keyup", searchPizza)
+    
+    function searchPizza(e) {
+        var searchInput =  document.getElementById('search_input').value
+        loadPizze(searchInput)
+    }
+    
+    loadPizze("")
+    function loadPizze(searchPizza) {
 
-    //    }
-    //}
-    loadPizze()
-    function loadPizze() {
-
-        axios.get('api/Pizza').then((res) => {
+        axios.get('api/Pizza', {params: {searchPizza: searchPizza}}).then((res) => {
             console.log('ok, ecco i tuoi dati', res.data)
+
             if (res.data.length == 0) {
                 document.querySelector('.js_no_pizze').classList.remove('d-none');
                 document.querySelector('.js_pizze').classList.add('d-none');
