@@ -99,7 +99,7 @@
                 res.data.forEach(pizza => {
                     console.log('pizza', pizza)
                     document.querySelector('.js_pizze').innerHTML +=
-                    `<div class="card w-25">
+                        `<div class="card w-25">
                         <a href="Pizza/Detail/${pizza.id}">
                             <img src="${pizza.img}" class="card-img-top" alt="${pizza.name}">
                         </a>
@@ -111,12 +111,10 @@
                         </div>
               
                         
-                    </div>`
+                    </div>`;
                 })
 
             }
-
-
         })
         .catch(err => {
             console.log('non ho trovato niente', err);

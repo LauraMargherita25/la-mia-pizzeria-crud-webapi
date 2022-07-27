@@ -24,16 +24,18 @@ namespace la_mia_pizzeria_static.Controllers
 
         public IActionResult Detail(int id)
         {
-            PizzeriaContext context = new PizzeriaContext();
-            Pizza pizza = context.Pizze.Where(pizza => pizza.Id == id).Include(p => p.Category).FirstOrDefault();
-            if (pizza == null)
-            {
-                return NotFound("Nesun prodotto con questo id");
-            }
-            else
-            {
-                return View(pizza);
-            }
+            //PizzeriaContext context = new PizzeriaContext();
+            //Pizza pizza = context.Pizze.Where(pizza => pizza.Id == id).Include(p => p.Category).FirstOrDefault();
+            //if (pizza == null)
+            //{
+            //    return NotFound("Nesun prodotto con questo id");
+            //}
+            //else
+            //{
+            //    return View(pizza);
+            //}
+
+            return View(id);
         }
 
         // GET: HomeController/Create
