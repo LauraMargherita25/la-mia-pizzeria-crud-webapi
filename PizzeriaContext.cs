@@ -10,6 +10,7 @@ namespace la_mia_pizzeria_static
         public DbSet<Pizza> Pizze { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<Message> Messages { get; set; }
 
         public PizzeriaContext()
         {
