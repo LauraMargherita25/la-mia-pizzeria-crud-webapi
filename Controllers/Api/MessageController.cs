@@ -17,21 +17,21 @@ namespace la_mia_pizzeria_static.Controllers.Api
 
         // POST: api/Message
         [HttpPost]
-        public IActionResult Post([FromForm] Message message)
+        public IActionResult Post([FromBody] Message message)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return UnprocessableEntity(ModelState);
-            //}
+            if (!ModelState.IsValid)
+            {
+                return UnprocessableEntity(ModelState);
+            }
 
-            //using (PizzeriaContext ctx = new PizzeriaContext())
-            //{
-            //    ctx.Messages.Add(message);
-            //    ctx.SaveChanges();
-            //    return Ok();
-            //}
+            using (PizzeriaContext ctx = new PizzeriaContext())
+            {
+                ctx.Messages.Add(message);
+                ctx.SaveChanges();
+                return Ok();
+            }
 
-            return Ok();
+            //return Ok();
         }
     }
 }

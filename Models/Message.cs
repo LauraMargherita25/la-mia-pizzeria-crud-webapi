@@ -14,13 +14,13 @@ namespace la_mia_pizzeria_static.Models
         public string Name { get; set; }
 
         [Required(ErrorMessage = "Il campo è obbligatorio")]
-        public string LastName { get; set; }
+        public string Lastname { get; set; }
 
         [EmailAddress]
         [Required(ErrorMessage = "Il campo è obbligatorio")]
         public string Email { get; set; }
 
-        public int? PhoneNumber { get; set; }
+        public string? PhoneNumber { get; set; }
 
         [Required(ErrorMessage = "Il campo è obbligatorio")]
         public string Title { get; set; }
@@ -34,10 +34,10 @@ namespace la_mia_pizzeria_static.Models
 
         }
 
-        public Message (string name, string lastName, string email, int? phoneNumber, string title, string body)
+        public Message (string name, string lastname, string email, string? phoneNumber, string title, string body)
         {
             Name = name;
-            LastName = lastName;
+            Lastname = lastname;
             Email = email;
             PhoneNumber = phoneNumber;
             Title = title;

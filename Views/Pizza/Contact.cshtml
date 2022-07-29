@@ -43,7 +43,7 @@
 <script type="text/javascript">
 function sendMessage(e) {
     e.preventDefault();
-
+    debugger;
     axios.post('/api/Message', {
         name: document.querySelector('#contact-name').value,
         lastname: document.querySelector('#contact-lastname').value,
@@ -54,7 +54,8 @@ function sendMessage(e) {
     })
     .then(function(response) {
         document.querySelector('#contact-name').value = '';
-        document.querySelector('#contact-lastName').value = '';
+        document.querySelector('#contact-lastname').value = '';
+        document.querySelector('#contact-email').value = '';
         document.querySelector('#contact-phoneNumber').value = '';
         document.querySelector('#contact-messageTitle').value = '';
         document.querySelector('#contact-messageBody').value = '';
