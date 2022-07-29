@@ -1,0 +1,63 @@
+﻿<div>
+    <div class="col-12 mt-5">
+        
+        <h2>Contattaci</h2>
+        
+        <form onsubmit="sendMessage(event)">
+            
+            <div class="mb-3">
+                <label for="contact-name" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="contact-name"/>
+            </div>
+            
+            <div class="mb-3">
+                <label for="contact-lastname" class="form-label">Cognome</label>
+                <input type="text" class="form-control" id="contact-lastname"/>
+            </div>
+            
+            <div class="mb-3">
+                <label for="contact-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="contact-email"/>
+            </div>
+            
+            <div class="mb-3">
+                <label for="contact-phoneNumber" class="form-label">Telefono</label>
+                <input type="tel" class="form-control" id="contact-phoneNumber"/>
+            </div>
+            
+            <div class="mb-3">
+                <label for="contact-messageTitle" class="form-label">Titolo</label>
+                <input type="text" class="form-control" id="contact-messageTitle"/>
+            </div>
+            
+            <div class="mb-3">
+                <label for="contact-messageBody" class="form-label">Testo</label>
+                <textarea class="form-control" id="contact-messageBody" rows="10"></textarea>
+            </div>
+           
+            <input type="submit" class="btn btn-danger" value="Invia"/>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+function sendMessage(e) {
+    e.preventDefault();
+
+    axios.post('/api/Message', {
+        name: document.querySelector('#contact-name').value,
+        lastname: document.querySelector('#contact-lastname').value,
+        email: document.querySelector('#contact-email').value,
+        phoneNumber: document.querySelector('#contact-phoneNumber').value,
+        title: document.querySelector('#contact-messageTitle').value,
+        body: document.querySelector('#contact-messageBody').value,
+    })
+    .then(function(response) {
+        document.querySelector('#contact-name').value = '';
+        document.querySelector('#contact-lastName').value = '';
+        document.querySelector('#contact-phoneNumber').value = '';
+        document.querySelector('#contact-messageTitle').value = '';
+        document.querySelector('#contact-messageBody').value = '';
+    })
+}
+</script>
